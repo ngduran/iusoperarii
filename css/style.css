@@ -1,0 +1,236 @@
+/* ==========================
+   Variáveis de Tema
+   ========================== */
+:root {
+  --bg: #f9f9f9;
+  --card: #ffffff;
+  --text: #333;
+  --border: #ddd;
+  --accent: #007bff; /* azul */
+  --accent-hover: #0056b3;
+  --radius: 10px;
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  --font: "Segoe UI", Arial, sans-serif;
+}
+
+/* ==========================
+   Reset e Base
+   ========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  padding: 20px;
+}
+
+h1, h2, legend {
+  color: var(--accent);
+}
+
+main.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ==========================
+   Header
+   ========================== */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.subtitle {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ==========================
+   Barra de Progresso
+   ========================== */
+.progress-bar {
+  width: 100%;
+  height: 14px;
+  background: var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+.progress {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  transition: width 0.4s ease;
+}
+
+/* ==========================
+   Formulário e Etapas
+   ========================== */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.hint {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+.radio-group label {
+  cursor: pointer;
+}
+
+.step {
+  display: none;
+}
+.step.active {
+  display: block;
+}
+
+/* ==========================
+   Botões
+   ========================== */
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+  margin: 4px;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn.primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn.next,
+.btn.prev {
+  background: #eaeaea;
+}
+.btn.next:hover,
+.btn.prev:hover {
+  background: #d6d6d6;
+}
+
+/* ==========================
+   Resultado
+   ========================== */
+.result {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+}
+
+.veredito {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.explicacao {
+  margin: 10px 0;
+  padding-left: 20px;
+  list-style: disc;
+}
+
+.nota-legal {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 12px;
+}
+
+/* ==========================
+   Footer
+   ========================== */
+.footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #777;
+  margin-top: 20px;
+}
+
+/* ==========================
+   Responsividade
+   ========================== */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  main.container {
+    max-width: 100%;
+  }
+
+  .card, .result {
+    padding: 18px;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 10px 14px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .card, .result {
+    padding: 15px;
+  }
+
+  .btn {
+    width: 100%; /* Botões ocupam largura total no mobile */
+    margin: 6px 0;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 0.85rem;
+  }
+
+  .veredito {
+    font-size: 1rem;
+  }
+}

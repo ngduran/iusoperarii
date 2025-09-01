@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Verificador de Vínculo Empregatício</title>
+  <!-- Corrigido o caminho do CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Vínculo Empregatício — Verificação</h1>
+      <p class="subtitle">
+        Responda passo a passo para verificar se há vínculo empregatício.
+      </p>
+    </header>
+
+    <!-- Barra de Progresso -->
+    <div class="progress-bar">
+      <div id="progress" class="progress"></div>
+    </div>
+
+    <form id="formVinculo" class="card" novalidate>
+      <!-- SUBORDINAÇÃO -->
+      <fieldset class="step active">
+        <legend>1. Subordinação</legend>
+        <p class="hint">
+          Há submissão a ordens/diretrizes do empregador (lugar, forma, modo e tempo)?
+        </p>
+        <div class="radio-group">
+          <label><input type="radio" name="subordinacao" value="sim" required> Sim</label>
+          <label><input type="radio" name="subordinacao" value="nao"> Não</label>
+        </div>
+        <div class="actions">
+          <button type="button" class="btn next">Próximo</button>
+        </div>
+      </fieldset>
+
+      <!-- HABITUALIDADE -->
+      <fieldset class="step">
+        <legend>2. Não eventualidade (habitualidade)</legend>
+        <p class="hint">
+          O serviço é prestado com regularidade (diária, semanal, quinzenal ou mensal)?
+        </p>
+        <div class="radio-group">
+          <label><input type="radio" name="habitualidade" value="sim" required> Sim</label>
+          <label><input type="radio" name="habitualidade" value="nao"> Não</label>
+        </div>
+        <div class="actions">
+          <button type="button" class="btn prev">Voltar</button>
+          <button type="button" class="btn next">Próximo</button>
+        </div>
+      </fieldset>
+
+      <!-- PESSOALIDADE -->
+      <fieldset class="step">
+        <legend>3. Pessoalidade</legend>
+        <p class="hint">
+          A pessoa física presta o serviço pessoalmente e não pode se fazer substituir livremente?
+        </p>
+        <div class="radio-group">
+          <label><input type="radio" name="pessoalidade" value="sim" required> Sim</label>
+          <label><input type="radio" name="pessoalidade" value="nao"> Não</label>
+        </div>
+        <div class="actions">
+          <button type="button" class="btn prev">Voltar</button>
+          <button type="button" class="btn next">Próximo</button>
+        </div>
+      </fieldset>
+
+      <!-- ONEROSIDADE -->
+      <fieldset class="step">
+        <legend>4. Onerosidade</legend>
+        <p class="hint">
+          Há pagamento de remuneração em troca do serviço (salário/contraprestação)?
+        </p>
+        <div class="radio-group">
+          <label><input type="radio" name="onerosidade" value="sim" required> Sim</label>
+          <label><input type="radio" name="onerosidade" value="nao"> Não</label>
+        </div>
+        <div class="actions">
+          <button type="button" class="btn prev">Voltar</button>
+          <button type="submit" class="btn primary">Verificar</button>
+        </div>
+      </fieldset>
+    </form>
+
+    <section id="resultado" class="result card" aria-live="polite" hidden>
+      <h2>Resultado</h2>
+      <p id="veredito" class="veredito"></p>
+      <ul id="explicacao" class="explicacao"></ul>
+      <p class="nota-legal">
+        <strong>Observação:</strong> Este simulador é educativo e não substitui
+        análise jurídica profissional.
+      </p>
+      <button id="btnPDF" class="btn primary">Imprimir</button>
+    </section>
+
+    <footer class="footer">
+      <small>© 2025 — Verificador de Vínculo Empregatício</small>
+    </footer>
+  </main>
+
+  <!-- Biblioteca para exportar PDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <!-- Corrigido o caminho do JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>
